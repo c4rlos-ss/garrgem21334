@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema da Garagem</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Sistema da Garagem</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Carros Disponíveis</a></li>
+        <li><a href="#">Registrar Empréstimo</a></li>
+        <li><a href="#">Relatar Incidente</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h2 class="h22">Bem-vindo ao Sistema da Garagem</h2>
+      <p>Aqui você pode solicitar empréstimos de carros, registrar incidentes e mais.</p>
+    </section>
+
+
+    <section id="carros-em-posse">
+      <h2 class="h22">Carros em minha posse</h2>
+      <div class="carros-grid">
+        <div class="carro">
+          <img src="jpg\ferrari.jpg" alt="Carro 4">
+          <h3>Carro 4</h3>
+          <p>Cor: Vermelho</p>
+          <p>Placa: JKL-3456</p>
+          <p>Modelo: Esportivo</p>
+        </div>
+      </div>
+      <button id="devolver-carro" onclick="exibirQuestionario()">Devolvi o carro</button>
+    </section>
+    
+    <section id="carros-disponiveis">
+      <h2>Carros Disponíveis</h2>
+      <div class="carrossel" id="carrossel-principal">
+        <div class="carro">
+          <img src="jpg\out09987.jpg" alt="Carro 1">
+          <h3>Carro 1</h3>
+          <p>Cor: Azul</p>
+          <p>Placa: ABC-1234</p>
+          <p>Modelo: Sedan</p>
+          <button onclick="pegarEmprestado('Carro 1')">Pegar emprestado</button>
+        </div>
+        <div class="carro">
+          <img src="jpg\nissan.jpg" alt="Carro 2">
+          <h3>Carro 2</h3>
+          <p>Cor: Prata</p>
+          <p>Placa: DEF-5678</p>
+          <p>Modelo: SUV</p>
+          <button onclick="pegarEmprestado('Carro 2')">Pegar emprestado</button>
+        </div>
+        <div class="carro">
+          <img src="\jpg\uno.jpg" alt="Carro 3">
+          <h3>Carro 3</h3>
+          <p>Cor: Preto</p>
+          <p>Placa: GHI-9012</p>
+          <p>Modelo: Hatchback</p>
+          <button onclick="pegarEmprestado('Carro 3')">Pegar emprestado</button>
+        </div>
+        <div class="carro">
+          <img src="\jpg\uno.jpg" alt="Carro 3">
+          <h3>Carro 3</h3>
+          <p>Cor: Preto</p>
+          <p>Placa: GHI-9012</p>
+          <p>Modelo: Hatchback</p>
+          <button onclick="pegarEmprestado('Carro 3')">Pegar emprestado</button>
+        </div>
+        <div class="carro">
+          <img src="\jpg\uno.jpg" alt="Carro 3">
+          <h3>Carro 3</h3>
+          <p>Cor: Preto</p>
+          <p>Placa: GHI-9012</p>
+          <p>Modelo: Hatchback</p>
+          <button onclick="pegarEmprestado('Carro 3')">Pegar emprestado</button>
+        </div>
+        <div class="carro">
+          <img src="\jpg\uno.jpg" alt="Carro 3">
+          <h3>Carro 3</h3>
+          <p>Cor: Preto</p>
+          <p>Placa: GHI-9012</p>
+          <p>Modelo: Hatchback</p>
+          <button onclick="pegarEmprestado('Carro 3')">Pegar emprestado</button>
+        </div>
+        <div class="carro">
+          <img src="\jpg\uno.jpg" alt="Carro 3">
+          <h3>Carro 3</h3>
+          <p>Cor: Preto</p>
+          <p>Placa: GHI-9012</p>
+          <p>Modelo: Hatchback</p>
+          <button onclick="pegarEmprestado('Carro 3')">Pegar emprestado</button>
+        </div>
+        <div class="carro">
+          <img src="\jpg\uno.jpg" alt="Carro 3">
+          <h3>Carro 3</h3>
+          <p>Cor: Preto</p>
+          <p>Placa: GHI-9012</p>
+          <p>Modelo: Hatchback</p>
+          <button onclick="pegarEmprestado('Carro 3')">Pegar emprestado</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+  <footer>
+    <p>&copy; 2022 Sistema da Garagem. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
