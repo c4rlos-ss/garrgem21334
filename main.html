@@ -4,7 +4,7 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Sistema da Garagem</title>
- <link rel="stylesheet" href="styles.css">
+ <link rel="stylesheet" href="styles.css"> 
  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -37,13 +37,10 @@
            <p>Cor: Vermelho</p>
            <p>Placa: JKL-3456</p>
            <p>Modelo: Esportivo</p>
-           <!---<button id="devolver-carro" class="meu-botao-devolver" onclick="exibirQuestionario()">Devolvi o carro</button> -->
+           <button id="devolver-carro" class="meu-botao-devolver" onclick="exibirQuestionario()">Devolvi o carro</button>
         </div>
        </div>
-    
-      <button id="devolver-carro" onclick="exibirQuestionario()">Devolvi o carro</button>
     </section>
-    
     <section id="carros-disponiveis">
       <h2>Carros Disponíveis</h2>
       <div class="carrossel" id="carrossel-principal">
@@ -103,20 +100,21 @@
 
  <script>
   $(document).ready(function(){
-     $('#carrossel-principal').slick({
-       dots: false,
-       infinite: true,
-       speed: 500,
-       slidesToShow: 3,
-       slidesToScroll: 3,
-       arrows: false,
-       responsive: [
+    $('#carrossel-principal').slick({
+ dots: false,
+ infinite: false, // Certifique-se de que isso está definido como true
+ speed: 500,
+ slidesToShow: 3,
+ slidesToScroll: 3,
+ arrows: false,
+ autoplay: false,
+ responsive: [
          {
            breakpoint: 1024,
            settings: {
              slidesToShow: 3,
-             slidesToScroll: 3,
-             infinite: true,
+             slidesToScroll: 1,
+             infinite: false,
              dots: false,
              arrows: false
            }
@@ -125,7 +123,7 @@
            breakpoint: 600,
            settings: {
              slidesToShow: 2,
-             slidesToScroll: 2,
+             slidesToScroll: 1,
              arrows: false
            }
          },
@@ -139,12 +137,7 @@
          }
        ]
      });
- 
-     // Remove os botões de navegação após a inicialização do carrossel
-     $('.slick-prev, .slick-next').remove();
   });
- </script> 
- 
- 
+ </script>
 </body>
 </html>
