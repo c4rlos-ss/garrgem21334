@@ -1,4 +1,4 @@
-/* Reset CSS padrão */
+ /* Reset CSS padrão */
 * {
   margin: 0;
   padding: 0;
@@ -239,114 +239,84 @@ header::after {
  }
  
  
- /* Personalização do iziModal */
-.iziModal {
-  background-color: #ffffff; /* Fundo branco para a pop-up */
-  color: #444450; /* Cor dos textos */
- }
- 
- .iziModal .iziModal-content {
-  padding: 20px;
- }
- 
- .iziModal .iziModal-header {
-  background-color: #78cb39; /* Aplica a cor tema ao cabeçalho */
-  color: #ffffff; /* Texto branco para o cabeçalho */
- }
- 
- .iziModal .iziModal-header h2 {
-  color: #ffffff; /* Texto branco para o título */
- }
- 
- .iziModal .iziModal-button {
-  background-color: #78cb39; /* Aplica a cor tema aos botões */
-  color: #ffffff; /* Texto branco para os botões */
- }
- 
- .iziModal .iziModal-button:hover {
-  background-color: #5a9e2e; /* Darker shade of the theme color for hover effect */
- }
- 
- /* Estilos adicionais para o questionário */
- .iziModal form {
+/* Força a cor tema ao cabeçalho e ao botão "Enviar" */
+.iziModal .iziModal-header,
+.iziModal button[type="submit"] {
+ background-color: #78cb39 !important; /* Aplica a cor tema */
+ color: #ffffff !important; /* Texto branco */
+}
+
+/* Estilos gerais para o questionário */
+.iziModal form {
   display: flex;
   flex-direction: column;
+  gap: 10px; /* Espaçamento entre os elementos do formulário */
  }
  
  .iziModal label {
-  margin-bottom: 10px;
+  font-weight: bold; /* Faz os rótulos parecerem mais importantes */
+  margin-bottom: 5px; /* Espaçamento abaixo dos rótulos */
  }
  
  .iziModal select,
  .iziModal input[type="file"] {
-  margin-bottom: 20px;
+  padding: 10px; /* Espaçamento interno */
+  border: 1px solid #ccc; /* Borda */
+  border-radius: 4px; /* Bordas arredondadas */
+  width: 100%; /* Largura total */
  }
  
  .iziModal button[type="submit"] {
-  background-color: #444450;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  background-color: #78cb39; /* Cor do botão */
+  color: #ffffff; /* Cor do texto */
+  padding: 10px 20px; /* Espaçamento interno */
+  border: none; /* Remove a borda */
+  border-radius: 4px; /* Bordas arredondadas */
+  cursor: pointer; /* Muda o cursor para indicar clique */
+  transition: background-color 0.3s ease-in-out; /* Transição suave para a cor de fundo */
  }
  
  .iziModal button[type="submit"]:hover {
-  background-color: #78cb39;
+  background-color: #5a9e2e; /* Darker shade of the theme color for hover effect */
  }
  
- 
- /* Estilos para a seção de Registrar Empréstimo */
- #registrar-emprestimo label {
-  display: block;
-  margin-bottom: 10px;
-  font-weight: bold;
- }
- 
- #registrar-emprestimo input[type="text"],
- #registrar-emprestimo input[type="date"] {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
+ .iziModal input[type="file"] {
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
- }
- 
- #registrar-emprestimo input[type="submit"] {
-  background-color: #444450; /* Cor do botão */
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
- }
- 
- #registrar-emprestimo input[type="submit"]:hover {
-  background-color: #78cb39; /* Efeito de hover no botão */
- }
- 
- /* Estilos para a seção de Relatar Incidente */
- #relatar-incidente textarea {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
+  cursor: pointer; /* Muda o cursor para indicar clique */
  }
  
- #relatar-incidente input[type="submit"] {
-  background-color: #444450; /* Cor do botão */
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
+ /* Estilo para o texto do campo de upload */
+ .iziModal input[type="file"]::-webkit-file-upload-button {
+  visibility: hidden; /* Esconde o botão padrão */
+ }
+ 
+ .iziModal input[type="file"]::before {
+  content: 'Escolher arquivo'; /* Texto personalizado */
+  display: inline-block;
+  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
   cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
  }
  
- #relatar-incidente input[type="submit"]:hover {
-  background-color: #78cb39; /* Efeito de hover no botão */
+ .iziModal input[type="file"]:hover::before {
+  border-color: black;
  }
+ 
+ .iziModal input[type="file"]:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+ }
+ 
+
  
  .h22 {
   color: #444450; /* Cor dos textos */
@@ -355,4 +325,3 @@ header::after {
  .menu {
   color: #444450; /* Cor dos textos */
  }
- 
