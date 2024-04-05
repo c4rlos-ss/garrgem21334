@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-br">
 <head>
  <meta charset="UTF-8">
@@ -144,17 +144,49 @@
       <option value="sim">Sim</option>
       <option value="nao">Não</option>
     </select>
+    <div id="descricao-acidente" style="display: none;">
+      <label for="descricao">Descrição do acidente:</label>
+      <textarea id="descricao" name="descricao"></textarea>
+    </div>
     <label for="defeito">O carro apresentou algum defeito?</label>
     <select id="defeito" name="defeito">
       <option value="sim">Sim</option>
       <option value="nao">Não</option>
     </select>
+    <div id="descricao-defeito" style="display: none;">
+      <label for="descricao-defeito-input">Descrição do defeito:</label>
+      <textarea id="descricao-defeito-input" name="descricao-defeito-input"></textarea>
+    </div>
     <label for="foto-video">Por favor, compartilhe uma foto ou vídeo (opcional)</label>
     <input type="file" id="foto-video" name="foto-video" accept="image/*, video/*">
     <button type="submit">Enviar</button>
   </form>
  </div>
  
+ 
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+     // Mostra o campo de descrição se o usuário selecionar "Sim" para o acidente
+     document.getElementById('acidente').addEventListener('change', function() {
+         var descricaoAcidente = document.getElementById('descricao-acidente');
+         if (this.value === 'sim') {
+             descricaoAcidente.style.display = 'block';
+         } else {
+             descricaoAcidente.style.display = 'none';
+         }
+     });
+ 
+     // Mostra o campo de descrição se o usuário selecionar "Sim" para o defeito
+     document.getElementById('defeito').addEventListener('change', function() {
+         var descricaoDefeito = document.getElementById('descricao-defeito');
+         if (this.value === 'sim') {
+             descricaoDefeito.style.display = 'block';
+         } else {
+             descricaoDefeito.style.display = 'none';
+         }
+     });
+  });
+ </script>
  
  
  <footer>
