@@ -8,6 +8,9 @@
  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css" />
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js"></script>
+ 
 </head>
 <body>
  <header>
@@ -93,7 +96,67 @@
       </div>
     </section>
  </main>
-  
+
+ <script>
+  $(document).ready(function() {
+     $("#modal-questionario").iziModal({
+         title: 'Questionário do Carro',
+         subtitle: 'Por favor, preencha o questionário',
+         iconColor: '',
+         iconClass: 'icon-chat',
+         iconText: '',
+         icon: 'icon-chat',
+         padding: 15,
+         autoOpen: false, // A pop-up não abrirá automaticamente
+         width: 600,
+         onOpening: function(modal) {
+             modal.startLoading();
+             // Você pode adicionar aqui qualquer lógica para carregar conteúdo dinamicamente
+             setTimeout(function() {
+                 modal.stopLoading();
+             }, 2000);
+         },
+         onOpened: function(modal) {
+             // Aqui você pode adicionar lógica para executar após a pop-up ser totalmente aberta
+         },
+         onClosing: function(modal) {
+             // Aqui você pode adicionar lógica para executar antes da pop-up ser fechada
+         },
+         onClosed: function(modal) {
+             // Aqui você pode adicionar lógica para executar após a pop-up ser fechada
+         }
+     });
+ 
+     // Abrir a pop-up quando o botão "Devolver o carro" for clicado
+     document.getElementById('devolver-carro').addEventListener('click', function() {
+         $("#modal-questionario").iziModal('open');
+     });
+  });
+ </script>
+ 
+ 
+
+ <div id="modal-questionario" class="iziModal">
+  <h3>Questionário do Carro</h3>
+  <form>
+    <label for="acidente">Houve algum acidente envolvendo o carro?</label>
+    <select id="acidente" name="acidente">
+      <option value="sim">Sim</option>
+      <option value="nao">Não</option>
+    </select>
+    <label for="defeito">O carro apresentou algum defeito?</label>
+    <select id="defeito" name="defeito">
+      <option value="sim">Sim</option>
+      <option value="nao">Não</option>
+    </select>
+    <label for="foto-video">Por favor, compartilhe uma foto ou vídeo (opcional)</label>
+    <input type="file" id="foto-video" name="foto-video" accept="image/*, video/*">
+    <button type="submit">Enviar</button>
+  </form>
+ </div>
+ 
+ 
+ 
  <footer>
     <p>&copy; 2024 Sistema da Garagem. Todos os direitos reservados.</p>
  </footer>
